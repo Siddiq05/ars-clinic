@@ -16,8 +16,11 @@ header {
   left: 0;
   z-index: 10;
 }
-.logo {
+header a {
   width: 10%;
+}
+.logo {
+  width: 100%;
 }
 .navList {
   position: absolute;
@@ -754,9 +757,6 @@ footer {
     display: none;
     z-index: 0;
   }
-  .logo {
-    width: 5%;
-  }
 
   .navList {
     position: relative;
@@ -994,6 +994,9 @@ footer {
   header {
     padding: 10px 30px;
     height: 10vh;
+  }
+  header a {
+    width: 5%;
   }
   .navList li:last-child {
     display: block;
