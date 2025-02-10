@@ -51,6 +51,51 @@ document.addEventListener("DOMContentLoaded", function () {
 
       form.innerHTML = formHTML;
       attachValidation(data.formFields);
+      const footer = document.getElementById("footer");
+
+      let footerHTML = `
+        <div class="footerDesc">
+          <h1>${data.footerDesc.title}</h1>
+          <p>${data.footerDesc.subtitle}</p>
+        </div>
+        <div class="footerCon">
+          <div class="Fimg">
+            <img src="${data.footerImage.src}" alt="${data.footerImage.alt}" />
+            <a href="${data.footerImage.link}" class="appointBtn1" rel="noopener noreferrer">
+        ${data.footerImage.buttonText}
+      </a>
+          </div>
+          <div class="Fcontact">`;
+
+      // Loop through contact info and generate links
+      data.contactInfo.forEach((item) => {
+        if (item.type === "timing") {
+          footerHTML += `
+            <div>
+              <i class="${item.icon}"></i>
+              <p>${item.text}</p>
+            </div>`;
+        } else {
+          footerHTML += `
+            <div>
+              <a href="${item.link}">
+                <i class="${item.icon}"></i>
+                <p>${item.text}</p>
+              </a>
+            </div>`;
+        }
+      });
+
+      footerHTML += `
+          </div>
+        </div>
+        <div class="location">
+          <iframe src="${data.map.src}" width="${data.map.width}" height="${data.map.height}" 
+                  style="border: 0" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <p class="copyRight">${data.copyright}</p>`;
+
+      footer.innerHTML = footerHTML;
     })
     .catch((error) => console.error("Error fetching data:", error));
 });
