@@ -1,0 +1,263 @@
+{
+  "header": {
+    "logo": "./assets/ars-logo.png",
+    "navList": [
+      { "name": "Home", "link": "/index.html" },
+      { "name": "Profile", "link": "/Profile.html" },
+      {
+        "name": "Services",
+        "subMenu": [
+          { "name": "Crowns", "link": "/Crown.html" },
+          { "name": "Deep Bite", "link": "/deepBite.html" },
+          { "name": "Dental Fluorosis", "link": "/DentalFluorosis.html" },
+          { "name": "Dental Laminates", "link": "/DentalLaminates.html" },
+          { "name": "Dental Implants", "link": "/DentalImplants.html" },
+          { "name": "Spacing", "link": "/Spacing.html" },
+          {
+            "name": "Early Childhood Caries",
+            "link": "/EarlyChildhoodCaries.html"
+          },
+          { "name": "Orthodontics", "link": "/Orthodontics.html" },
+          {
+            "name": "Root Canal Treatment",
+            "link": "/RootCanalTreatment.html"
+          },
+          { "name": "Cosmetic dentistry", "link": "/CosmeticDentistry.html" }
+        ]
+      },
+      { "name": "Testimonials", "link": "/Testimonials.html" },
+      { "name": "Treatment Charges", "link": "/Charges.html" },
+      { "name": "Contact", "link": "/Contact.html" },
+      {
+        "name": "BOOK AN APPOINTMENT",
+        "link": "/Contact.html"
+      }
+    ]
+  },
+  "slider": {
+    "images": [
+      { "src": "./assets/Img01.jpg", "alt": "Img02" },
+      { "src": "./assets/Img02.png", "alt": "Img03" },
+      { "src": "./assets/Img03.jpg", "alt": "Img04" }
+    ],
+    "buttons": [{ "id": "btn1" }, { "id": "btn2" }, { "id": "btn3" }],
+    "content": [
+      {
+        "title": "Innovative Dental™ Solutions Since 2009",
+        "subTitle": "WE ARE Innovative Dental",
+        "para": "With two decades of excellence, we are proud to be not just the best but also the largest dental clinic in Bangalore!"
+      },
+      {
+        "title": "More than 20000+",
+        "subTitle": "Achieving Success in Cosmetic and Implant Cases!",
+        "para": "We offer specialized courses to train doctors in dental implant procedures."
+      },
+      {
+        "title": "Among the Best in the Industry",
+        "subTitle": "An Award-Winning Dental Care Provider",
+        "para": "A Leading Hospital in Bangalore with a 5-Star Customer Satisfaction Rating"
+      }
+    ]
+  },
+  "experience": [
+    {
+      "count": "20000+",
+      "title": "Successful Cosmetic and Implant Cases"
+    },
+    {
+      "count": "18+",
+      "title": "Years Experience"
+    },
+    {
+      "count": "5⭐",
+      "title": "Rating in customer satisfaction"
+    }
+  ],
+  "content": {
+    "title": "Bangalore's Leading Award-Winning Dental Clinic.",
+    "paragraphs": [
+      "Innovative Dental Solutions embodies the ethos of being customer-friendly, cost-effective, and comprehensive in delivering exceptional dental care.",
+      "With over 10,000 successful cosmetic and implant cases completed over the past decade, we have proudly established ourselves as one of the best dental clinics in Bangalore.",
+      "Our treatments are provided by highly specialized MDS doctors in a fully sterilized environment. With completely transparent treatment charges, you can walk into our clinic with confidence and peace of mind at any time.",
+      "ARS Innovative Dental Solutions has been independently assessed and accredited by the Indian Health Organization (IHO). We adhere to the principles and practices of clinical governance as defined by the IHO, ensuring the highest standards of quality and care."
+    ],
+    "buttonText": "Read More",
+    "buttonLink": "/Profile.html",
+    "imageSrc": "./assets/WhyUs.jpg",
+    "imageAlt": "WhyUs"
+  },
+  "whyUs": {
+    "title": "Why Us",
+    "description": [
+      "We have a <b>state-of-the-art dental</b> clinic in Koramangala at par with International Standards.",
+      "<b>Highly qualified dentists</b> with many years of experience are happy to assist you in the <b>most professional manner.</b>"
+    ],
+    "whyDetails": [
+      {
+        "icon": "./assets/W1.png",
+        "title": "Experienced Dentists",
+        "description": "We have a team of experienced dentists who constantly upgrade and update their skills"
+      },
+      {
+        "icon": "./assets/W2.png",
+        "title": "Gennext Equipment",
+        "description": "We have updated ourselves with the new generation technology to provide the best in dentistry"
+      },
+      {
+        "icon": "./assets/W3.png",
+        "title": "Sterilization",
+        "description": "We use latest sterilisation protocol to match with the international standards"
+      },
+      {
+        "icon": "./assets/W4.png",
+        "title": "Success Rate",
+        "description": "We have completed more than 10000 Successful Cosmetic and Implant Cases"
+      }
+    ],
+    "image": "./assets/WhyUsImg.png"
+  },
+  "leadership": {
+    "title": "Leadership",
+    "description": "We value the power of diversity, bringing together individuals with unique skills, perspectives, and ideas to foster creativity and innovation.",
+    "leaders": [
+      {
+        "name": "Dr. M. Pasha",
+        "image": "./assets/docImg.png",
+        "qualifications": "BDS, CCOD (Author-KNOW ENDO, DO ENDO)<br />Mentor, Educator & Public Speaker",
+        "bio": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae delectus corporis facere? Recusandae quibusdam aliquam pariatur, soluta illum fugit. Iste nulla nemo labore animi assumenda quae quidem quisquam aliquid deserunt soluta aliquam ut, asperiores error!"
+      },
+      {
+        "name": "Dr. Akash Mandaloy",
+        "image": "./assets/docImg.png",
+        "qualifications": "BDS, MDS (Fellowship in Implantology)<br />CIIOMFI France",
+        "bio": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae delectus corporis facere? Recusandae quibusdam aliquam pariatur, soluta illum fugit. Iste nulla nemo labore animi assumenda quae quidem quisquam aliquid deserunt soluta aliquam ut, asperiores error!"
+      }
+    ]
+  },
+  "fees": {
+    "imageSrc": "./assets/fees.png",
+    "title": "Clear and Fair Pricing.",
+    "buttonText": "View Rate Card",
+    "buttonLink": "/Charges.html"
+  },
+  "services": [
+    {
+      "icon": "fa-circle-question",
+      "title": "Frequently",
+      "description": "Asked Question",
+      "link": "/Faqs.html"
+    },
+    {
+      "icon": "fa-thumbs-up",
+      "title": "Our Advantage",
+      "description": "Over a Corporate Setup",
+      "link": "/Advantage.html"
+    },
+    {
+      "icon": "fa-money-check-dollar",
+      "title": "Transparent",
+      "description": "Treatment Charges",
+      "link": "/Charges.html"
+    },
+    {
+      "icon": "fa-user-doctor",
+      "title": "Highly Qualified",
+      "description": "And Experienced Doctors",
+      "link": "/Profile.html"
+    }
+  ],
+  "formFields": {
+    "fullName": {
+      "label": "Full Name",
+      "placeholder": "John Doe",
+      "errorMessage": "Write Full Name"
+    },
+    "phoneNumber": {
+      "label": "Phone No",
+      "placeholder": "098 765 4321",
+      "errorMessage": "Phone No should be 10 digits"
+    },
+    "email": {
+      "label": "E-mail",
+      "placeholder": "example@example.com",
+      "errorMessage": "Invalid Email Address"
+    },
+    "message": {
+      "label": "Message",
+      "placeholder": "Enter your message",
+      "minLength": 30,
+      "errorMessage": "30 characters required"
+    }
+  },
+  "footerDesc": {
+    "title": "Your perfect smile is just a click away!",
+    "subtitle": "We’re thrilled to welcome some renowned faces to our practice."
+  },
+  "footerImage": {
+    "src": "./assets/smileFooter.png",
+    "alt": "Smile Image",
+    "buttonText": "BOOK AN APPOINTMENT",
+    "link": "/Contact.html"
+  },
+  "contactInfo": [
+    {
+      "icon": "fa-solid fa-phone",
+      "type": "phone",
+      "link": "tel:+0987654321",
+      "text": "0987654321"
+    },
+    {
+      "icon": "fa-solid fa-envelope",
+      "type": "email",
+      "link": "mailto:ars@example.com",
+      "text": "ars@example.com"
+    },
+    {
+      "icon": "fa-solid fa-clock",
+      "type": "timing",
+      "text": "Timing : 9 AM to 6:30 PM (Sunday Off)"
+    },
+    {
+      "icon": "fa-solid fa-location-dot",
+      "type": "location",
+      "link": "https://maps.app.goo.gl/TWLVvRAvSewZj2yN6",
+      "text": "4th block, beside BRASSBERRY, 1296/A, Hennur Rd, 1st Stage, HBR Layout, Bengaluru, Karnataka 560043"
+    }
+  ],
+  "map": {
+    "src": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.0827160351173!2d77.6338481!3d13.0304044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1762d2b83fa7%3A0x9dad42bb4cdde08e!2sARS%20Innovative%20dental%20solutions!5e0!3m2!1sen!2sin!4v1737630562546!5m2!1sen!2sin",
+    "width": "800",
+    "height": "600"
+  },
+  "copyright": "© Copyright 2024-25. All Rights Reserved | ARS Innovative Dental Solutions | Leading Dental Implants Clinic in Bangalore | Dentist in HBR Layout",
+  "treatmentCharges": {
+    "title": "Treatment Charges",
+    "imageSrc": "./assets/charges.png",
+    "servicesTitle": "Our Services",
+    "services": [
+      { "name": "Crowns", "link": "#" },
+      { "name": "Deep Bite", "link": "#" },
+      { "name": "Dental Fluorosis", "link": "#" },
+      { "name": "Dental Laminates", "link": "#" },
+      { "name": "Dental Implants", "link": "#" },
+      { "name": "Spacing", "link": "#" },
+      { "name": "Early Childhood Caries", "link": "#" },
+      { "name": "Orthodontics", "link": "#" },
+      { "name": "Root Canal Treatment", "link": "#" },
+      { "name": "Cosmetic dentistry", "link": "#" },
+      { "name": "Dental Treatments", "link": "#" },
+      { "name": "General Dentistry", "link": "#" },
+      { "name": "Case Blogs", "link": "#" }
+    ]
+  },
+  "profile": {
+    "title": "Our Profile",
+    "description": "Featuring highly skilled and trained dentists equipped with state-of-the-art technology, The Leading Dental Clinic in Bangalore.",
+    "paragraphs": [
+      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam fuga laboriosam dignissimos nostrum quis, dolorem ab laudantium consequuntur alias quas! Minima, exercitationem velit. Obcaecati doloremque quos quia, ex quis placeat porro impedit mollitia autem iste a fugiat, earum eos cumque.",
+      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam fuga laboriosam dignissimos nostrum quis, dolorem ab laudantium consequuntur alias quas! Minima, exercitationem velit. Obcaecati doloremque quos quia, ex quis placeat porro impedit mollitia autem iste a fugiat, earum eos cumque.",
+      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam fuga laboriosam dignissimos nostrum quis, dolorem ab laudantium consequuntur alias quas! Minima, exercitationem velit. Obcaecati doloremque quos quia, ex quis placeat porro impedit mollitia autem iste a fugiat, earum eos cumque.",
+      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam fuga laboriosam dignissimos nostrum quis, dolorem ab laudantium consequuntur alias quas! Minima, exercitationem velit. Obcaecati doloremque quos quia, ex quis placeat porro impedit mollitia autem iste a fugiat, earum eos cumque."
+    ]
+  }
+}

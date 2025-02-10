@@ -43,7 +43,7 @@ header {
 }
 .navList li {
   list-style: none;
-  padding: 25px 0px;
+  padding: 5px 0px;
 }
 .navList li a {
   text-decoration: none;
@@ -102,7 +102,7 @@ header {
 .imgContent {
   position: absolute;
   color: azure;
-  bottom: 15%;
+  bottom: 10%;
   left: 50%;
   transform: translateX(-50%);
   width: 80%;
@@ -112,7 +112,12 @@ header {
   gap: 10px;
 }
 
-.imgContent .appointBtn {
+.appointBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
   height: 20%;
   width: 45%;
   border-radius: 10px;
@@ -120,6 +125,27 @@ header {
   outline: 0;
   background-color: navy;
   color: snow;
+}
+.appointBtn1 {
+  padding: 20px;
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 10px;
+  border: 0;
+  outline: 0;
+  background-color: navy;
+  color: snow;
+}
+.appointBtn:hover,
+.appointBtn1:hover {
+  background-color: #45a049; /* Slightly darker green on hover */
+  color: #fff; /* Keep the text white */
+  transform: scale(1.1); /* Slight zoom effect */
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
 }
 .experience {
   padding: 40px 0px;
@@ -141,27 +167,39 @@ header {
 }
 .mainCon {
   text-align: center;
-  margin: 40px;
+  margin: 40px 10px;
   display: flex;
   flex-direction: column;
   gap: 15px;
   align-items: center;
 }
+
 .mainCon h1 {
   margin-bottom: 20px;
 }
 .mainCon p {
   font-size: 18px;
 }
-.readBtn {
+.mainCon a {
   height: 7vh;
-  width: 60%;
+  width: 50%;
+}
+.readBtn {
+  height: 100%;
+  width: 100%;
   border: 0;
   border-radius: 15px;
   background-color: yellowgreen;
   color: snow;
   font-size: 20px;
   margin: 15px 0px;
+  cursor: pointer;
+}
+.readBtn:hover {
+  background-color: navy; /* Slightly darker green on hover */
+  color: #fff; /* Keep the text white */
+  transform: scale(1.1); /* Slight zoom effect */
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
 }
 .content1 img {
   width: 100%;
@@ -273,6 +311,13 @@ header {
   border-radius: 15px;
   background-color: #3c5dcc;
   color: #ffff;
+  cursor: pointer;
+}
+.feeBtn:hover {
+  background-color: #45a049; /* Slightly darker green on hover */
+  color: #fff; /* Keep the text white */
+  transform: scale(1.1); /* Slight zoom effect */
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
 }
 .Specialists {
   margin: 30px 20px;
@@ -353,6 +398,11 @@ header {
 .serviceCon a {
   text-decoration: none;
   color: white;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.serviceCon a:hover {
+  transform: scale(1.1);
 }
 .faqs i {
   font-size: 55px;
@@ -521,6 +571,184 @@ footer {
   text-align: center;
   background-color: #b2b9e3;
 }
+.ImgCon {
+  margin-top: 8vh;
+  position: relative;
+}
+.ImgCon img {
+  width: 100%;
+  height: 20vh;
+  object-fit: cover;
+}
+.ImgCon h2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 3px solid;
+  padding: 15px 20px;
+  width: 60%;
+  text-align: center;
+}
+.Content {
+  padding: 30px 0px;
+}
+.ConDesc {
+  text-align: center;
+  padding: 0px 30px 30px;
+}
+.ConDesc h1 {
+  margin: 20px;
+}
+.ConDesc p {
+  font-size: 20px;
+  line-height: 25px;
+}
+.conPara {
+  text-align: center;
+  margin: 10px 30px 30px;
+}
+.conPara p {
+  padding: 10px;
+}
+.tCharges {
+  padding: 30px 20px;
+}
+.cCon img {
+  width: 100%;
+}
+.tCharges h1 {
+  margin: 10px 0px;
+  text-align: center;
+}
+.Services {
+  margin: 20px;
+  border: 1px solid;
+}
+.Services h1 {
+  padding: 10px;
+  background-color: gainsboro;
+  margin: 0;
+  text-align: justify;
+}
+.Services ul {
+  padding: 10px;
+}
+.Services ul li {
+  list-style: none;
+  padding: 5px 0px;
+  cursor: pointer;
+  transition: padding-left 0.3s ease-in;
+  border-bottom: 1px dotted;
+}
+.Services ul li:last-child {
+  border-bottom: 0;
+}
+.Services ul li a {
+  text-decoration: none;
+  font-size: 20px;
+  color: rgb(67, 7, 7);
+}
+.Services ul li:hover {
+  padding-left: 10px;
+}
+.ServicesList li {
+  padding: 2px 0px;
+  transition: padding-left 0.3s ease-in;
+}
+.ServicesList li:last-child {
+  display: block;
+}
+.ServicesList {
+  padding-left: 10px;
+  display: none;
+}
+.toogleService {
+  display: block;
+  transition: 0.3s ease-in;
+}
+.caret-down {
+  transition: transform 0.3s ease-in-out;
+}
+.rotate {
+  transform: rotate(180deg);
+}
+.ServicesList li:hover {
+  padding-left: 10px;
+  background-color: #96e9f8;
+}
+.mDesc {
+  text-align: center;
+}
+.mainSection {
+  padding: 20px;
+}
+.mainSection p {
+  padding: 10px;
+}
+.mainSection h2 {
+  background-color: #052093;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 10px 0px;
+}
+.mContent1 img {
+  width: 100%;
+  height: 30vh;
+  border: 4px solid darkgray;
+  border-radius: 15px;
+  margin: 20px 0px;
+}
+.mContent1 {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.row ul {
+  padding: 10px 25px;
+}
+.row ul li {
+  padding: 10px;
+}
+.faq-container {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.question-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px;
+}
+.question-container h3 {
+  width: 90%;
+}
+.answer-container {
+  display: none;
+  padding-left: 10px;
+  padding-top: 5px;
+}
+
+.answer-container p {
+  margin: 5px 0;
+}
+
+.fa-caret-down {
+  transition: transform 0.3s ease;
+}
+
+.rotate {
+  transform: rotate(180deg);
+}
+
+.faq-container.active .answer-container {
+  display: block;
+}
 @media screen and (min-width: 768px) {
   .menus {
     display: none;
@@ -585,7 +813,7 @@ footer {
     align-items: baseline;
   }
   .readBtn {
-    width: 45%;
+    width: 100%;
   }
   .content1 img {
     width: 45%;
@@ -698,6 +926,9 @@ footer {
     height: 25vh;
     border-radius: 15px;
   }
+  .appointBtn1 {
+    width: 80%;
+  }
   .footerappointBtn {
     height: 7vh;
     width: 80%;
@@ -709,6 +940,54 @@ footer {
     align-items: baseline;
     text-align: left;
   }
+  .ImgCon img {
+    height: 15vh;
+  }
+  .ImgCon h2 {
+    width: 35%;
+  }
+  .ConDesc p {
+    width: 70%;
+    margin: 0 auto;
+  }
+  .ServicesList {
+    position: absolute;
+    padding: 25px 15px 0px;
+    background-color: white;
+    width: 200px;
+    transform: none;
+  }
+  .ServicesList li {
+    padding: 5px 0px;
+  }
+  .mContentSection {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 10px;
+  }
+  .mContent1 {
+    width: 65%;
+  }
+  .mContent2 {
+    width: 35%;
+  }
+  .mDesc {
+    text-align: justify;
+    padding-left: 20px;
+  }
+  .mContent1 img {
+    width: 65%;
+    height: 23vh;
+  }
+  .navList {
+    transition: all 0.3s ease;
+  }
+  .navList li:hover {
+    transform: scale(1.1);
+  }
+  .navList li a:hover {
+    color: darkblue;
+  }
 }
 
 @media screen and (min-width: 1280px) {
@@ -718,25 +997,34 @@ footer {
   }
   .navList li:last-child {
     display: block;
-    width: 14%;
+    width: 20%;
   }
   .navList {
     width: 70%;
     justify-content: space-around;
     font-size: 20px;
   }
+  .navList li:last-child a,
   .appointBtn {
     height: 8vh;
-    width: 115%;
+    width: 100%;
     border-radius: 20px;
     border: none;
     background-color: navy;
     color: white;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    font-size: 16px;
+    transition: all 0.3s ease;
   }
-  .appointBtn:hover {
-    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.3);
-    cursor: pointer;
+  .navList li:last-child a:hover {
+    background-color: #45a049; /* Slightly darker green on hover */
+    color: #fff; /* Keep the text white */
+    transform: scale(1.1); /* Slight zoom effect */
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
   }
   .ImgSlider {
     margin-top: 10vh;
@@ -749,7 +1037,7 @@ footer {
 
   .imgContent .appointBtn {
     height: 25%;
-    width: 30%;
+    width: 35%;
   }
   .imgBtns span {
     height: 10px;
@@ -768,9 +1056,10 @@ footer {
     width: 30%;
     height: 50vh;
   }
-  .readBtn {
+  .mainCon a {
     width: 25%;
   }
+
   .WhyCon {
     flex-direction: row;
   }
@@ -834,7 +1123,60 @@ footer {
     width: 60%;
     height: 35vh;
   }
+  .appointBtn1 {
+    width: 60%;
+  }
   .footerappointBtn {
     width: 60%;
+  }
+  .ImgCon img {
+    height: 25vh;
+  }
+  .ImgCon h2 {
+    width: 25%;
+  }
+  .ConDesc p {
+    width: 50%;
+  }
+  .cCon {
+    display: flex;
+    gap: 20px;
+  }
+  .cCon img {
+    height: 80vh;
+    width: 75%;
+  }
+  .Services {
+    margin: 0;
+  }
+  .ServicesList li:last-child {
+    width: 100%;
+  }
+  .ServicesList li a:last-child {
+    border-radius: 0px;
+    color: black;
+    background: none;
+    box-shadow: none;
+    font-size: inherit;
+    justify-content: start;
+    height: auto;
+    padding-bottom: 10px;
+  }
+  .ServicesList li a:last-child:hover {
+    background: none;
+    color: black; /* Keep the text white */
+    transform: none;
+    box-shadow: none;
+  }
+  .mContent1 {
+    width: 72%;
+  }
+  .mContent2 {
+    width: 25%;
+  }
+
+  .mContent1 img {
+    width: 35%;
+    height: 35vh;
   }
 }
