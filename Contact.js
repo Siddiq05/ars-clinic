@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
   fetch("ArsData.json")
     .then((response) => response.json())
     .then((data) => {
+      // Handle data and elements
       document.getElementById("logo").src = data.header.logo;
       const navList = document.getElementById("navList");
 
@@ -13,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
           subMenu.classList.add("ServicesList");
           item.subMenu.forEach((subItem) => {
             const subLi = document.createElement("li");
-            subLi.innerHTML = `<a href="${subItem.link}">${subItem.name}</a>`;
+            subLi.innerHTML = `<a href="${subItem.link}">${subItem.name}</a>`; // Use the link from JSON
             subMenu.appendChild(subLi);
           });
           li.appendChild(subMenu);
@@ -24,6 +25,54 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         navList.appendChild(li);
       });
+
+      // Menu Toggle Logic
+      // let navList = document.querySelector(".navList");
+      let openMenu = document.getElementById("openMenu");
+      let closeMenu = document.getElementById("closeMenu");
+
+      const toogleMenu = (isOpen) => {
+        navList.classList.toggle("open", isOpen);
+        openMenu.style.display = isOpen ? "none" : "block";
+        closeMenu.style.display = isOpen ? "block" : "none";
+      };
+
+      openMenu.addEventListener("click", () => toogleMenu(true));
+      closeMenu.addEventListener("click", () => toogleMenu(false));
+
+      // Ensure ServiceDropDown exists after it's rendered
+      const ServiceDropDown = document.querySelector(".ServiceDropDown");
+      if (ServiceDropDown) {
+        const ServicesList = document.querySelector(".ServicesList");
+        const caretDown = document.querySelector(".fa-caret-down");
+
+        // Toggle dropdown when the ServiceDropDown is clicked
+        ServiceDropDown.addEventListener("click", (event) => {
+          event.stopPropagation(); // Prevent the click event from bubbling up to the window
+          if (ServicesList) {
+            ServicesList.classList.toggle("toogleService");
+          }
+          if (caretDown) {
+            caretDown.classList.toggle("rotate");
+          }
+          console.log("Dropdown clicked!");
+        });
+
+        // Close dropdown if you click anywhere outside the ServiceDropDown
+        window.addEventListener("click", () => {
+          if (
+            ServicesList &&
+            ServicesList.classList.contains("toogleService")
+          ) {
+            ServicesList.classList.remove("toogleService");
+          }
+          if (caretDown && caretDown.classList.contains("rotate")) {
+            caretDown.classList.remove("rotate");
+          }
+        });
+      } else {
+        console.error("ServiceDropDown element not found!");
+      }
 
       // Generate Form Fields
       const form = document.getElementById("dynamicForm");
