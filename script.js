@@ -86,6 +86,8 @@ document.addEventListener("DOMContentLoaded", function () {
       const titleElement = document.querySelector(".imgContent h2");
       const subTitleElement = document.querySelector(".imgContent h1");
       const paraElement = document.querySelector(".imgContent p");
+      const prevBtn = document.querySelector(".prev");
+      const nextBtn = document.querySelector(".next");
 
       let num = 0;
       let interval;
@@ -129,6 +131,21 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 2500);
       };
 
+      // Handle next button click
+      nextBtn.addEventListener("click", () => {
+        num = (num + 1) % data.slider.images.length;
+        updateSlider();
+        startSlider();
+      });
+
+      // Handle previous button click
+      prevBtn.addEventListener("click", () => {
+        num = (num - 1 + data.slider.images.length) % data.slider.images.length;
+        updateSlider();
+        startSlider();
+      });
+
+      // Handle button click navigation
       buttons.forEach((btn) => {
         btn.addEventListener("click", (e) => {
           num = parseInt(e.target.getAttribute("data-index"));
@@ -295,46 +312,74 @@ document.addEventListener("DOMContentLoaded", function () {
       const footer = document.getElementById("footer");
 
       let footerHTML = `
-        <div class="footerDesc">
-          <h1>${data.footerDesc.title}</h1>
-          <p>${data.footerDesc.subtitle}</p>
+      <div class="footerDesc">
+        <h1>${data.footerDesc.title}</h1>
+        <p>${data.footerDesc.subtitle}</p>
+      </div>
+      <div class="footerCon">
+        <div class="Fimg">
+          <img src="${data.footerImage.src}" alt="${data.footerImage.alt}" />
+          <a href="${data.footerImage.link}" class="appointBtn1">
+            ${data.footerImage.buttonText}
+          </a>
         </div>
-        <div class="footerCon">
-          <div class="Fimg">
-            <img src="${data.footerImage.src}" alt="${data.footerImage.alt}" />
-            <a href="${data.footerImage.link}" class="appointBtn1" rel="noopener noreferrer">
-        ${data.footerImage.buttonText}
-      </a>
-          </div>
-          <div class="Fcontact">`;
+        <div class="Fcontact">`;
 
-      // Loop through contact info and generate links
+      // Loop through contact info
       data.contactInfo.forEach((item) => {
         if (item.type === "timing") {
           footerHTML += `
-            <div>
-              <i class="${item.icon}"></i>
-              <p>${item.text}</p>
-            </div>`;
+          <div>
+            <i class="${item.icon}"></i>
+            <p>${item.text}</p>
+          </div>`;
         } else {
           footerHTML += `
-            <div>
-              <a href="${item.link}">
-                <i class="${item.icon}"></i>
-                <p>${item.text}</p>
-              </a>
-            </div>`;
+          <div>
+            <a href="${item.link}">
+              <i class="${item.icon}"></i>
+              <p>${item.text}</p>
+            </a>
+          </div>`;
         }
       });
 
+      // Add social media links
+      footerHTML += `<div class="social-icons">`;
+      data.socialMedia.forEach((social) => {
+        footerHTML += `
+        <a href="${social.link}">
+          <i class="${social.icon}"></i>
+        </a>`;
+      });
+      footerHTML += `</div>`;
+
       footerHTML += `
-          </div>
         </div>
-        <div class="location">
-          <iframe src="${data.map.src}" width="${data.map.width}" height="${data.map.height}" 
-                  style="border: 0" allowfullscreen loading="lazy"></iframe>
+      </div>
+
+      <div class="locations">
+        <div class="locDesc">
+          <h2>Now Serving You at Multiple Locations!</h2>
         </div>
-        <p class="copyRight">${data.copyright}</p>`;
+        <div class="locs">`;
+
+      // Loop through locations
+      data.locations.forEach((location) => {
+        footerHTML += `
+        <div>
+          <a href="${location.link}" target="_blank">
+            <i class="fa-solid fa-location-dot"></i>
+            <p>${location.text}</p>
+          </a>
+        </div>`;
+      });
+
+      footerHTML += `
+        </div>
+      </div>
+
+      <p class="copyRight">${data.copyright}</p>`;
 
       footer.innerHTML = footerHTML;
     })
@@ -342,12 +387,13 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 const specialistImg = document.querySelector(".specialistImg");
-
 const rightArrow = document.querySelector(".rightArrow");
-
 const specialization = document.querySelector(".specialization");
-
 const specialistBtns = document.querySelectorAll(".specialistBtns p");
+
+// Selecting prev and next buttons
+const prevBtn = document.querySelector(".prev1");
+const nextBtn = document.querySelector(".next1");
 
 const specialistContent = [
   { title: "Orthodontics", href: "/Orthodontics.html" },
@@ -355,7 +401,7 @@ const specialistContent = [
   { title: "Crowns", href: "/Crown.html" },
   { title: "Dental Fluorosis", href: "/DentalFluorosis.html" },
   { title: "Deep Bite", href: "/deepBite.html" },
-  { title: "Early Childwood Caries", href: "/EarlyChildhoodCaries.html" },
+  { title: "Early Childhood Caries", href: "/EarlyChildhoodCaries.html" },
   { title: "Dental Implants", href: "/DentalImplants.html" },
   { title: "Cosmetic Dentistry", href: "/CosmeticDentistry.html" },
   { title: "Dental Laminates", href: "/DentalLaminates.html" },
@@ -363,43 +409,61 @@ const specialistContent = [
 
 let sCount = 0;
 let imgInterval;
+
 const specialistImgSlider = () => {
   imgInterval = setInterval(() => {
-    sCount++;
-    if (sCount < 9) {
-      specialistImg.style.transition = "transform 1s ease-in-out";
-    } else {
-      sCount = 0;
-      specialistImg.style.transition = " transform 0s ease-in-out";
-    }
-    specialistImg.style.transform = `translateX(-${sCount * 100}%)`;
-    specialistActiveButton();
-    specialistupdateContent();
+    nextImage();
   }, 2500);
+};
+
+const updateSlider = () => {
+  specialistImg.style.transform = `translateX(-${sCount * 100}%)`;
+  specialistImg.style.transition = "transform 1s ease-in-out";
+  specialistActiveButton();
+  specialistupdateContent();
 };
 
 const specialistActiveButton = () => {
   specialistBtns.forEach((item, index) => {
-    if (index === sCount) {
-      item.classList.add("active");
-    } else {
-      item.classList.remove("active");
-    }
+    item.classList.toggle("active", index === sCount);
   });
 };
+
 const specialistupdateContent = () => {
-  // Update the content in the .imgContent section
   specialization.textContent = specialistContent[sCount].title;
   rightArrow.setAttribute("href", specialistContent[sCount].href);
 };
 
+const nextImage = () => {
+  sCount = (sCount + 1) % specialistContent.length; // Loop to the first image after the last
+  updateSlider();
+};
+
+const prevImage = () => {
+  sCount = (sCount - 1 + specialistContent.length) % specialistContent.length; // Loop to the last image when at the first
+  updateSlider();
+};
+
+// Click event for prev and next buttons
+prevBtn.addEventListener("click", () => {
+  clearInterval(imgInterval);
+  prevImage();
+  specialistImgSlider();
+});
+
+nextBtn.addEventListener("click", () => {
+  clearInterval(imgInterval);
+  nextImage();
+  specialistImgSlider();
+});
+
+// Click event for navigation dots
 specialistBtns.forEach((item, index) => {
   item.addEventListener("click", () => {
-    sCount = index; // Set the current image to the clicked button's index
-    specialistImg.style.transition = "transform 1s ease-in-out";
-    specialistImg.style.transform = `translateX(-${sCount * 100}%)`;
-    specialistActiveButton();
-    specialistupdateContent();
+    clearInterval(imgInterval);
+    sCount = index;
+    updateSlider();
+    specialistImgSlider();
   });
 });
 
@@ -407,6 +471,8 @@ specialistImgSlider();
 
 const specialistImg1 = document.querySelectorAll(".specialistImg1");
 const specialistBtns1 = document.querySelectorAll(".specialistBtns1 p");
+const prevBtn2 = document.querySelector(".prev2");
+const nextBtn2 = document.querySelector(".next2");
 
 const specialistContent1 = [
   [
@@ -426,74 +492,85 @@ const specialistContent1 = [
   ],
 ];
 
-// Function to update the content and apply transformations to the slider
-const updateSliderContent = (item, Index, sCount1) => {
-  item.style.transform = `translateX(-${sCount1 * 100}%)`; // Slide the images
+let sCount1 = [0, 0, 0]; // Tracks index for each slider
+let imgInterval1;
 
-  const specialization = item
+// Function to update slider content
+const updateSliderContent = (groupIndex) => {
+  specialistImg1[groupIndex].style.transform = `translateX(-${
+    sCount1[groupIndex] * 100
+  }%)`;
+
+  const specialization = specialistImg1[groupIndex]
     .closest(".specialistSlider")
     .querySelector(".specialization");
-  const rightArrow = item
+  const rightArrow = specialistImg1[groupIndex]
     .closest(".specialistSlider")
     .querySelector(".rightArrow");
 
-  // Access content for the current index
-  const currentGroup = specialistContent1[Index];
-  const content = currentGroup[sCount1 % currentGroup.length];
+  const content = specialistContent1[groupIndex][sCount1[groupIndex]];
   specialization.textContent = content.title;
   rightArrow.setAttribute("href", content.href);
+
+  updateActiveButton();
 };
 
-// Function for initializing the slider
-const specialistImgSlider1 = () => {
-  specialistImg1.forEach((item, Index) => {
-    const totalImages = item.children.length;
-    let sCount1 = 0; // Counter for images in the current slider
+// Function to start automatic sliding
+const startAutoSlide = () => {
+  clearInterval(imgInterval1);
+  imgInterval1 = setInterval(() => {
+    specialistImg1.forEach((_, groupIndex) => {
+      sCount1[groupIndex] =
+        (sCount1[groupIndex] + 1) % specialistContent1[groupIndex].length;
+      updateSliderContent(groupIndex);
+    });
+  }, 2500);
+};
 
-    // Automatic sliding every 2.5 seconds
-    setInterval(() => {
-      sCount1 = (sCount1 + 1) % totalImages; // Increment and reset the counter
-      updateSliderContent(item, Index, sCount1); // Update slider content
-      specialistActiveButton1(sCount1);
-    }, 2500); // Slide every 2.5 seconds
-    // Initialize the first content
-    updateSliderContent(item, Index, sCount1);
+// Function to update active button
+const updateActiveButton = () => {
+  specialistBtns1.forEach((btn, index) => {
+    btn.classList.toggle("active", index === sCount1[0]);
   });
 };
 
-// Function to handle active button state
-const specialistActiveButton1 = (sCount1) => {
-  specialistBtns1.forEach((item, index) => {
-    if (index === sCount1) {
-      item.classList.add("active");
-    } else {
-      item.classList.remove("active");
-    }
-  });
-};
-
-// Event listener for button clicks
-specialistBtns1.forEach((item, index) => {
-  item.addEventListener("click", () => {
-    // Adjust sCount1 to the index of the clicked button
-    let sCount1 = index;
-
-    // Slide to the correct image and update content
-    specialistImg1.forEach((slider, groupIndex) => {
-      slider.style.transition = "transform 1s ease-in-out";
-      slider.style.transform = `translateX(-${sCount1 * 100}%)`;
-
-      // Update the content based on clicked button
-      updateSliderContent(slider, groupIndex, sCount1);
+// Event listener for manual button clicks
+specialistBtns1.forEach((btn, index) => {
+  btn.addEventListener("click", () => {
+    specialistImg1.forEach((_, groupIndex) => {
+      sCount1[groupIndex] = index;
+      updateSliderContent(groupIndex);
     });
 
-    // Update active button
-    specialistActiveButton1(sCount1);
+    clearInterval(imgInterval1);
+    setTimeout(startAutoSlide, 2500);
   });
 });
 
-// Initialize the sliders
-specialistImgSlider1();
+// Event listeners for next & prev buttons
+nextBtn2.addEventListener("click", () => {
+  specialistImg1.forEach((_, groupIndex) => {
+    sCount1[groupIndex] =
+      (sCount1[groupIndex] + 1) % specialistContent1[groupIndex].length;
+    updateSliderContent(groupIndex);
+  });
+  clearInterval(imgInterval1);
+  setTimeout(startAutoSlide, 5000);
+});
+
+prevBtn2.addEventListener("click", () => {
+  specialistImg1.forEach((_, groupIndex) => {
+    sCount1[groupIndex] =
+      (sCount1[groupIndex] - 1 + specialistContent1[groupIndex].length) %
+      specialistContent1[groupIndex].length;
+    updateSliderContent(groupIndex);
+  });
+  clearInterval(imgInterval1);
+  setTimeout(startAutoSlide, 1000);
+});
+
+// Start the slider
+startAutoSlide();
 
 function attachValidation(fields) {
   const errors = {

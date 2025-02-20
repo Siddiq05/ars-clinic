@@ -1,6 +1,6 @@
 {
   "header": {
-    "logo": "./assets/ars-logo.png",
+    "logo": "./assets/logo.ars.jpeg",
     "navList": [
       { "name": "Home", "link": "/index.html" },
       { "name": "Profile", "link": "/Profile.html" },
@@ -37,7 +37,7 @@
   "slider": {
     "images": [
       { "src": "./assets/Img01.jpg", "alt": "Img02" },
-      { "src": "./assets/Img02.png", "alt": "Img03" },
+      { "src": "./assets/Img02.jpg", "alt": "Img03" },
       { "src": "./assets/Img03.jpg", "alt": "Img04" }
     ],
     "buttons": [{ "id": "btn1" }, { "id": "btn2" }, { "id": "btn3" }],
@@ -65,7 +65,7 @@
       "title": "Successful Cosmetic and Implant Cases"
     },
     {
-      "count": "18+",
+      "count": "24+",
       "title": "Years Experience"
     },
     {
@@ -74,7 +74,7 @@
     }
   ],
   "content": {
-    "title": "Bangalore's Leading Award-Winning Dental Clinic.",
+    "title": "Bangalore and Navi Mumbai's Leading Award-Winning Dental Clinic.",
     "paragraphs": [
       "Innovative Dental Solutions embodies the ethos of being customer-friendly, cost-effective, and comprehensive in delivering exceptional dental care.",
       "With over 10,000 successful cosmetic and implant cases completed over the past decade, we have proudly established ourselves as one of the best dental clinics in Bangalore.",
@@ -89,7 +89,7 @@
   "whyUs": {
     "title": "Why Us",
     "description": [
-      "We have a <b>state-of-the-art dental</b> clinic in Koramangala at par with International Standards.",
+      "We have a <b>state-of-the-art dental</b> clinic as per International Standards.",
       "<b>Highly qualified dentists</b> with many years of experience are happy to assist you in the <b>most professional manner.</b>"
     ],
     "whyDetails": [
@@ -122,15 +122,15 @@
     "leaders": [
       {
         "name": "Dr. M. Pasha",
-        "image": "./assets/docImg.png",
-        "qualifications": "BDS, CCOD (Author-KNOW ENDO, DO ENDO)<br />Mentor, Educator & Public Speaker",
-        "bio": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae delectus corporis facere? Recusandae quibusdam aliquam pariatur, soluta illum fugit. Iste nulla nemo labore animi assumenda quae quidem quisquam aliquid deserunt soluta aliquam ut, asperiores error!"
+        "image": "./assets/p.png",
+        "qualifications": "BDS, CCOID (Author-KNOW ENDO, DO ENDO)<br />Mentor, Educator & Public Speaker",
+        "bio": "Dr. M Pasha has been into dental profession for 22 years. He has done his graduation from Al Ameen Dental College Bijapur. He runs a successful Multispeciality Dental practice, Implant centre & Academy at Bangalore and Navi Mumbai. He has insatiable interest in teaching and mentoring and conducting Hands on courses on General Dentistry, Prosthodontics and Orthodontics. He has authored & published books on Endodontics 'Know Endo DO Endo' and a book on philosophy 'Six Lines on Lane' Currently available worldwide on Amazon and Atithi books."
       },
       {
         "name": "Dr. Akash Mandaloy",
-        "image": "./assets/docImg.png",
+        "image": "./assets/a.png",
         "qualifications": "BDS, MDS (Fellowship in Implantology)<br />CIIOMFI France",
-        "bio": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae delectus corporis facere? Recusandae quibusdam aliquam pariatur, soluta illum fugit. Iste nulla nemo labore animi assumenda quae quidem quisquam aliquid deserunt soluta aliquam ut, asperiores error!"
+        "bio": "Dr. Akash Mandalay is a renowned Implantologist and Periodontist in India. He graduated from Rural Dental College Loni and completed post-graduation in Periodontics at Modern Dental College, Indore. He also earned a Post Graduate Diploma in Implantology from Chanvaz Institute, France, and is a certified Implantologist from Sharad Pawar Dental College, Wardha. Passionate about education, he conducts courses in Periodontics, Implantology, and general practice. He has served as an Associate Professor at Sri Aurobindo College of Dentistry, Indore, and is a consultant at various dental clinics and hospitals across India. He runs a successful practice in Khopoli, Maharashtra."
       }
     ]
   },
@@ -216,20 +216,37 @@
       "icon": "fa-solid fa-clock",
       "type": "timing",
       "text": "Timing : 9 AM to 6:30 PM (Sunday Off)"
-    },
-    {
-      "icon": "fa-solid fa-location-dot",
-      "type": "location",
-      "link": "https://maps.app.goo.gl/TWLVvRAvSewZj2yN6",
-      "text": "4th block, beside BRASSBERRY, 1296/A, Hennur Rd, 1st Stage, HBR Layout, Bengaluru, Karnataka 560043"
     }
   ],
-  "map": {
-    "src": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.0827160351173!2d77.6338481!3d13.0304044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1762d2b83fa7%3A0x9dad42bb4cdde08e!2sARS%20Innovative%20dental%20solutions!5e0!3m2!1sen!2sin!4v1737630562546!5m2!1sen!2sin",
-    "width": "800",
-    "height": "600"
-  },
-  "copyright": "© Copyright 2024-25. All Rights Reserved | ARS Innovative Dental Solutions | Leading Dental Implants Clinic in Bangalore | Dentist in HBR Layout",
+  "locations": [
+    {
+      "link": "https://maps.app.goo.gl/5UcyLS5UjCadHrR9A",
+      "text": "5th Block, Victoria Layout, Bengaluru, Karnataka 560001"
+    },
+    {
+      "link": "https://maps.app.goo.gl/gXTsKUo7roFw3Wwr9",
+      "text": "4th block, beside BRASSBERRY, 1296/A, Hennur Rd, 1st Stage, HBR Layout, Bengaluru, Karnataka 560043"
+    },
+    {
+      "link": "https://maps.app.goo.gl/VfcVXMZ5oDuuJtgh7",
+      "text": "BHARAT ARCADE, Samaj Mandir Rd, opposite Shubham collection and Pratibha Complex, Bazarpeth, Laxminagar, Khopoli, Maharashtra 410203"
+    }
+  ],
+  "socialMedia": [
+    {
+      "link": "https://facebook.com",
+      "icon": "fab fa-facebook"
+    },
+    {
+      "link": "https://instagram.com",
+      "icon": "fab fa-instagram"
+    },
+    {
+      "link": "https://wa.me",
+      "icon": "fab fa-whatsapp"
+    }
+  ],
+  "copyright": "© Copyright 2024-25. All Rights Reserved | ARS Innovative Dental Solutions | Leading Dental Implants Clinic in Bangalore and Navi Mumbai.",
   "treatmentCharges": {
     "title": "Treatment Charges",
     "imageSrc": "./assets/charges.png",
@@ -252,12 +269,12 @@
   },
   "profile": {
     "title": "Our Profile",
-    "description": "Featuring highly skilled and trained dentists equipped with state-of-the-art technology, The Leading Dental Clinic in Bangalore.",
+    "description": "Featuring highly skilled and trained dentists equipped with state-of-the-art technology, The Leading Dental Clinic in Bangalore and Navi Mumbai.",
     "paragraphs": [
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam fuga laboriosam dignissimos nostrum quis, dolorem ab laudantium consequuntur alias quas! Minima, exercitationem velit. Obcaecati doloremque quos quia, ex quis placeat porro impedit mollitia autem iste a fugiat, earum eos cumque.",
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam fuga laboriosam dignissimos nostrum quis, dolorem ab laudantium consequuntur alias quas! Minima, exercitationem velit. Obcaecati doloremque quos quia, ex quis placeat porro impedit mollitia autem iste a fugiat, earum eos cumque.",
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam fuga laboriosam dignissimos nostrum quis, dolorem ab laudantium consequuntur alias quas! Minima, exercitationem velit. Obcaecati doloremque quos quia, ex quis placeat porro impedit mollitia autem iste a fugiat, earum eos cumque.",
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam fuga laboriosam dignissimos nostrum quis, dolorem ab laudantium consequuntur alias quas! Minima, exercitationem velit. Obcaecati doloremque quos quia, ex quis placeat porro impedit mollitia autem iste a fugiat, earum eos cumque."
+      "ARS Innovative Dental Solutions was established in 2001 with a commitment to providing exceptional dental care. Over the years, our journey has been driven by the evolving need to offer personalized, high-quality treatment to every individual. To enhance patient experience and ensure the constant presence of skilled dental professionals, we consolidated our services into a single state-of-the-art center. Our clinic is equipped with the latest technology and advanced dental equipment, allowing us to deliver comprehensive care across various specialties—all under one roof.",
+      "With years of experience and a commitment to excellence, ARS Innovative Dental Solutions provides advanced dental care. Dr. M Pasha, with 22 years in the field, runs a Multispeciality Dental Practice, Implant Centre & Academy in Bangalore and Navi Mumbai. A passionate mentor, he conducts courses in General Dentistry, Prosthodontics, and Orthodontics and has authored books on Endodontics and Philosophy.",
+      "Dr. Akash Mandalay, a leading Implantologist and Periodontist, holds a Post Graduate Diploma in Implantology from Chanvaz Institute, France, and has taught as an Associate Professor. He specializes in Periodontics, Implantology, and General Practice and runs a successful practice in Khopoli, Maharashtra.",
+      "ARS Innovative Dental Solutions was founded with a commitment to comprehensive treatment planning, prioritizing sterilization, patient education, and personalized care. From the very beginning, we have focused on delivering high-quality dental treatments with thorough consultations and dedicated follow-ups, ensuring the best outcomes for our patients."
     ]
   }
 }
