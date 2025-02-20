@@ -1,3 +1,80 @@
+const imagesContainer = document.getElementById("imageSlider");
+const imgButtons = document.querySelectorAll(".imgBtns span");
+const titleElement = document.getElementById("title");
+const subTitleElement = document.getElementById("subTitle");
+const paraElement = document.getElementById("para");
+const prevBtn = document.querySelector(".prev");
+const nextBtn = document.querySelector(".next");
+
+const sliderContent = [
+  {
+    title: "Innovative Dental™ Solutions Since 2009",
+    subTitle: "WE ARE Innovative Dental",
+    para: "With two decades of excellence, we are proud to be not just the best but also the largest dental clinic in Bangalore!",
+  },
+  {
+    title: "More than 20000+",
+    subTitle: "Achieving Success in Cosmetic and Implant Cases!",
+    para: "We offer specialized courses to train doctors in dental implant procedures.",
+  },
+  {
+    title: "Among the Best in the Industry",
+    subTitle: "An Award-Winning Dental Care Provider",
+    para: "A Leading Hospital in Bangalore with a 5-Star Customer Satisfaction Rating",
+  },
+];
+
+let num = 0;
+let interval;
+
+const updateContent = () => {
+  titleElement.textContent = sliderContent[num].title;
+  subTitleElement.textContent = sliderContent[num].subTitle;
+  paraElement.textContent = sliderContent[num].para;
+};
+
+const updateSlider = () => {
+  imagesContainer.style.transform = `translateX(-${num * 100}%)`;
+  imgButtons.forEach((btn, index) => {
+    btn.classList.toggle("active", index === num);
+  });
+  updateContent();
+};
+
+const startSlider = () => {
+  clearInterval(interval);
+  interval = setInterval(() => {
+    num = (num + 1) % sliderContent.length;
+    updateSlider();
+  }, 2500);
+};
+
+// Handle next button click
+nextBtn.addEventListener("click", () => {
+  num = (num + 1) % sliderContent.length;
+  updateSlider();
+  startSlider();
+});
+
+// Handle previous button click
+prevBtn.addEventListener("click", () => {
+  num = (num - 1 + sliderContent.length) % sliderContent.length;
+  updateSlider();
+  startSlider();
+});
+
+// Handle button click navigation
+imgButtons.forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    num = parseInt(e.target.getAttribute("data-index"));
+    updateSlider();
+    startSlider();
+  });
+});
+
+updateContent();
+updateSlider();
+startSlider();
 document.addEventListener("DOMContentLoaded", function () {
   fetch("ArsData.json")
     .then((response) => response.json())
@@ -80,83 +157,6 @@ document.addEventListener("DOMContentLoaded", function () {
       } else {
         console.error("ServiceDropDown element not found!");
       }
-
-      const imagesContainer = document.getElementById("imageSlider");
-      const imgButtons = document.getElementById("imgButtons");
-      const titleElement = document.querySelector(".imgContent h2");
-      const subTitleElement = document.querySelector(".imgContent h1");
-      const paraElement = document.querySelector(".imgContent p");
-      const prevBtn = document.querySelector(".prev");
-      const nextBtn = document.querySelector(".next");
-
-      let num = 0;
-      let interval;
-
-      // Add images dynamically
-      imagesContainer.innerHTML = data.slider.images
-        .map((image) => `<img src="${image.src}" alt="${image.alt}">`)
-        .join("");
-
-      // Add navigation buttons dynamically
-      imgButtons.innerHTML = data.slider.buttons
-        .map(
-          (_, index) => `<span id="btn${index}" data-index="${index}"></span>`
-        )
-        .join("");
-
-      const buttons = document.querySelectorAll(".imgBtns span");
-
-      const updateContent = () => {
-        titleElement.textContent = data.slider.content[num].title;
-        subTitleElement.textContent = data.slider.content[num].subTitle;
-        paraElement.textContent = data.slider.content[num].para;
-      };
-
-      const updateSlider = () => {
-        imagesContainer.style.transform = `translateX(-${num * 100}%)`;
-        imagesContainer.style.transition = "transform 1s ease-in-out";
-
-        buttons.forEach((btn, index) => {
-          btn.classList.toggle("active", index === num);
-        });
-
-        updateContent();
-      };
-
-      const startSlider = () => {
-        clearInterval(interval);
-        interval = setInterval(() => {
-          num = (num + 1) % data.slider.images.length;
-          updateSlider();
-        }, 2500);
-      };
-
-      // Handle next button click
-      nextBtn.addEventListener("click", () => {
-        num = (num + 1) % data.slider.images.length;
-        updateSlider();
-        startSlider();
-      });
-
-      // Handle previous button click
-      prevBtn.addEventListener("click", () => {
-        num = (num - 1 + data.slider.images.length) % data.slider.images.length;
-        updateSlider();
-        startSlider();
-      });
-
-      // Handle button click navigation
-      buttons.forEach((btn) => {
-        btn.addEventListener("click", (e) => {
-          num = parseInt(e.target.getAttribute("data-index"));
-          updateSlider();
-          startSlider();
-        });
-      });
-
-      updateContent();
-      updateSlider();
-      startSlider();
 
       const experienceContainer = document.getElementById(
         "experienceContainer"
@@ -392,8 +392,8 @@ const specialization = document.querySelector(".specialization");
 const specialistBtns = document.querySelectorAll(".specialistBtns p");
 
 // Selecting prev and next buttons
-const prevBtn = document.querySelector(".prev1");
-const nextBtn = document.querySelector(".next1");
+const prevBtn1 = document.querySelector(".prev1");
+const nextBtn1 = document.querySelector(".next1");
 
 const specialistContent = [
   { title: "Orthodontics", href: "/Orthodontics.html" },
@@ -416,7 +416,7 @@ const specialistImgSlider = () => {
   }, 2500);
 };
 
-const updateSlider = () => {
+const updateSlider1 = () => {
   specialistImg.style.transform = `translateX(-${sCount * 100}%)`;
   specialistImg.style.transition = "transform 1s ease-in-out";
   specialistActiveButton();
@@ -436,22 +436,22 @@ const specialistupdateContent = () => {
 
 const nextImage = () => {
   sCount = (sCount + 1) % specialistContent.length; // Loop to the first image after the last
-  updateSlider();
+  updateSlider1();
 };
 
 const prevImage = () => {
   sCount = (sCount - 1 + specialistContent.length) % specialistContent.length; // Loop to the last image when at the first
-  updateSlider();
+  updateSlider1();
 };
 
 // Click event for prev and next buttons
-prevBtn.addEventListener("click", () => {
+prevBtn1.addEventListener("click", () => {
   clearInterval(imgInterval);
   prevImage();
   specialistImgSlider();
 });
 
-nextBtn.addEventListener("click", () => {
+nextBtn1.addEventListener("click", () => {
   clearInterval(imgInterval);
   nextImage();
   specialistImgSlider();

@@ -12,7 +12,7 @@
   </head>
   <body>
     <header>
-      <a href="/index.html" rel="noopener noreferrer"
+      <a href="/index.html" rel="noopener noreferrer" class="Logo"
         ><img src="" alt="logo" class="logo" id="logo"
       /></a>
       <div class="menus">
@@ -22,15 +22,21 @@
       <ul class="navList" id="navList"></ul>
     </header>
     <div class="ImgSlider">
-      <div class="images" id="imageSlider"></div>
-      <div class="imgBtns" id="imgButtons"></div>
+      <div class="images" id="imageSlider">
+        <img src="./assets/Img01.jpg" alt="Img01" />
+        <img src="./assets/Img02.jpg" alt="Img02" />
+        <img src="./assets/Img03.jpg" alt="Img03" />
+      </div>
+      <div class="imgBtns" id="imgButtons">
+        <span data-index="0"></span>
+        <span data-index="1"></span>
+        <span data-index="2"></span>
+      </div>
       <div class="imgContent" id="imgContent">
-        <h2></h2>
-        <h1></h1>
-        <p></p>
-        <a href="/Contact.html" class="appointBtn" rel="noopener noreferrer">
-          BOOK AN APPOINTMENT
-        </a>
+        <h2 id="title"></h2>
+        <h1 id="subTitle"></h1>
+        <p id="para"></p>
+        <a href="/Contact.html" class="appointBtn">BOOK AN APPOINTMENT</a>
       </div>
       <div class="silderBtns">
         <i class="fa-solid fa-less-than prev"></i>
