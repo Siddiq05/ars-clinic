@@ -27,54 +27,73 @@ const sliderContent = [
 let num = 0;
 let interval;
 
+const startSlider = () => {
+  interval = setInterval(() => {
+    nextSlide();
+  }, 2500);
+};
+// Function to update the slider position
+const updateSlider = () => {
+  imagesContainer.style.transform = `translateX(-${num * 100}%)`;
+  imagesContainer.style.transition = "transform 1s ease-in-out";
+  updateActiveButton1();
+  updateContent();
+};
+// Function to update slider content
 const updateContent = () => {
   titleElement.textContent = sliderContent[num].title;
   subTitleElement.textContent = sliderContent[num].subTitle;
   paraElement.textContent = sliderContent[num].para;
 };
 
-const updateSlider = () => {
-  imagesContainer.style.transform = `translateX(-${num * 100}%)`;
+// Function to update active button
+const updateActiveButton1 = () => {
   imgButtons.forEach((btn, index) => {
     btn.classList.toggle("active", index === num);
   });
-  updateContent();
 };
 
-const startSlider = () => {
-  clearInterval(interval);
-  interval = setInterval(() => {
-    num = (num + 1) % sliderContent.length;
-    updateSlider();
-  }, 2500);
-};
-
-// Handle next button click
-nextBtn.addEventListener("click", () => {
+// Function to move to next slide
+const nextSlide = () => {
   num = (num + 1) % sliderContent.length;
   updateSlider();
-  startSlider();
-});
+};
 
-// Handle previous button click
-prevBtn.addEventListener("click", () => {
+// Function to move to previous slide
+const prevSlide = () => {
   num = (num - 1 + sliderContent.length) % sliderContent.length;
   updateSlider();
+};
+
+// Event listener for next button
+nextBtn.addEventListener("click", () => {
+  clearInterval(interval);
+  nextSlide();
   startSlider();
 });
 
-// Handle button click navigation
-imgButtons.forEach((btn) => {
-  btn.addEventListener("click", (e) => {
-    num = parseInt(e.target.getAttribute("data-index"));
+// Event listener for previous button
+prevBtn.addEventListener("click", () => {
+  clearInterval(interval);
+  prevSlide();
+  startSlider();
+});
+
+// Event listener for navigation dots
+imgButtons.forEach((btn, index) => {
+  btn.addEventListener("click", () => {
+    clearInterval(interval);
+    num = index;
     updateSlider();
     startSlider();
   });
 });
 
+// Initialize slider
 updateContent();
 updateSlider();
 startSlider();
+
 document.addEventListener("DOMContentLoaded", function () {
   fetch("ArsData.json")
     .then((response) => response.json())
@@ -283,31 +302,83 @@ document.addEventListener("DOMContentLoaded", function () {
         serviceContainer.innerHTML += serviceHTML;
       });
       // Generate Form Fields
-      const form = document.getElementById("dynamicForm");
-      let formHTML = "";
+      const formContainer = document.getElementById("formContainer");
 
+      let formHTML = `<h2>Contact Us</h2><form id="contactForm">`;
       for (const key in data.formFields) {
         const field = data.formFields[key];
         formHTML += `
-          <div class="input-group">
-            <label for="${key}">${field.label}</label>
-            <input type="${
-              key === "email" ? "email" : key === "phoneNumber" ? "tel" : "text"
-            }" 
-                   id="${key}" 
-                   placeholder="${field.placeholder}" />
-            <span class="${key}-error"></span>
-          </div>`;
+        <div class="form-group">
+          <label for="${key}">${field.label}</label>
+          ${
+            field.type === "textarea"
+              ? `<textarea id="${key}" placeholder="${field.placeholder}"></textarea>`
+              : `<input type="${field.type}" id="${key}" placeholder="${field.placeholder}" />`
+          }
+          <span class="error" id="${key}Error"></span>
+        </div>`;
       }
-
       formHTML += `
-        <button type="submit" id="submitForm">
-          Submit <i class="fa-solid fa-paper-plane fa-beat"></i>
-        </button>
-        <span class="submit-error"></span>`;
+      <button type="submit" class="formButton">Submit</button>
+      <p class="success-message" id="successMessage">Form submitted successfully! ✅</p>
+    </form>`;
+      formContainer.innerHTML = formHTML;
 
-      form.innerHTML = formHTML;
-      attachValidation(data.formFields);
+      // Form Validation & Submission
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", async function (event) {
+          event.preventDefault();
+          let isValid = true;
+          const successMessage = document.getElementById("successMessage");
+
+          for (const key in data.formFields) {
+            const field = data.formFields[key];
+            const inputElement = document.getElementById(key);
+            const errorElement = document.getElementById(`${key}Error`);
+            const value = inputElement.value.trim();
+
+            if (
+              (key === "name" && value.length < 3) ||
+              (key === "phone" && !/^[0-9]{10}$/.test(value)) ||
+              (key === "email" && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) ||
+              (key === "message" && value === "")
+            ) {
+              errorElement.textContent = field.errorMessage;
+              isValid = false;
+            } else {
+              errorElement.textContent = "";
+            }
+          }
+
+          if (isValid) {
+            const formData = {
+              name: document.getElementById("name").value.trim(),
+              phone: document.getElementById("phone").value.trim(),
+              email: document.getElementById("email").value.trim(),
+              message: document.getElementById("message").value.trim(),
+            };
+
+            try {
+              await fetch(
+                "https://script.google.com/macros/s/AKfycbzA4dfWreS-R3QAQv6AZBRDAApsNs1i71iq1sjqLNRnPlGIdryvUz-vciDyyOUN4-VZ/exec",
+                {
+                  method: "POST",
+                  mode: "no-cors",
+                  body: JSON.stringify(formData),
+                  headers: { "Content-Type": "application/json" },
+                }
+              );
+
+              successMessage.style.display = "block";
+              successMessage.textContent = "Submitted Successfully!";
+              setTimeout(() => (successMessage.style.display = "none"), 2000);
+              document.getElementById("contactForm").reset();
+            } catch (error) {
+              console.error("Form submission error:", error);
+            }
+          }
+        });
 
       const footer = document.getElementById("footer");
 
@@ -330,14 +401,14 @@ document.addEventListener("DOMContentLoaded", function () {
         if (item.type === "timing") {
           footerHTML += `
           <div>
-            <i class="${item.icon}"></i>
+            <i class="${item.icon}"  style="${item.color}"></i>
             <p>${item.text}</p>
           </div>`;
         } else {
           footerHTML += `
           <div>
             <a href="${item.link}">
-              <i class="${item.icon}"></i>
+              <i class="${item.icon}" style="${item.color}"></i>
               <p>${item.text}</p>
             </a>
           </div>`;
@@ -349,7 +420,7 @@ document.addEventListener("DOMContentLoaded", function () {
       data.socialMedia.forEach((social) => {
         footerHTML += `
         <a href="${social.link}">
-          <i class="${social.icon}"></i>
+          <i class="${social.icon}" style="${social.color}"></i>
         </a>`;
       });
       footerHTML += `</div>`;
@@ -360,7 +431,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       <div class="locations">
         <div class="locDesc">
-          <h2>Now Serving You at Multiple Locations!</h2>
+          <h1>Now Serving You at Multiple Locations!</h1>
         </div>
         <div class="locs">`;
 
@@ -374,12 +445,26 @@ document.addEventListener("DOMContentLoaded", function () {
           </a>
         </div>`;
       });
-
       footerHTML += `
-        </div>
       </div>
+    </div>`;
 
-      <p class="copyRight">${data.copyright}</p>`;
+      // **NEW Experts Section Above Copyright**
+      footerHTML += `
+    <div class="Experts">
+      <h1>${data.expertsSection.title}</h1>
+      <a href="${data.footerImage.link}" class="appointBtn2">
+            ${data.footerImage.buttonText}
+      </a>
+      <a href="${data.expertsSection.link}">
+        <i class="fa-solid fa-location-dot" style="color: ${data.expertsSection.color};"></i>
+        <p>${data.expertsSection.location}</p>
+      </a>
+      
+    </div>`;
+
+      // Copyright
+      footerHTML += `<p class="copyRight">${data.copyright}</p>`;
 
       footer.innerHTML = footerHTML;
     })
@@ -571,126 +656,3 @@ prevBtn2.addEventListener("click", () => {
 
 // Start the slider
 startAutoSlide();
-
-function attachValidation(fields) {
-  const errors = {
-    fullName: document.querySelector(".fullName-error"),
-    phoneNumber: document.querySelector(".phoneNumber-error"),
-    email: document.querySelector(".email-error"),
-    message: document.querySelector(".message-error"),
-    submitError: document.querySelector(".submit-error"),
-  };
-
-  const inputs = {
-    fullName: document.getElementById("fullName"),
-    phoneNumber: document.getElementById("phoneNumber"),
-    email: document.getElementById("email"),
-    message: document.getElementById("message"),
-  };
-
-  function setError(element, message) {
-    element.innerHTML = message;
-    element.style.color = "red";
-  }
-
-  function setSuccess(element) {
-    element.innerHTML =
-      '<i class="fa-solid fa-check" style="color: seagreen;"></i>';
-  }
-
-  function validateFullName() {
-    let name = inputs.fullName.value.trim();
-    if (!name.match(/^[A-Za-z]+\s[A-Za-z]+$/)) {
-      setError(errors.fullName, fields.fullName.errorMessage);
-      return false;
-    }
-    setSuccess(errors.fullName);
-    return true;
-  }
-
-  function validatePhone() {
-    let phone = inputs.phoneNumber.value.trim();
-    if (!phone.match(/^[0-9]{10}$/)) {
-      setError(errors.phoneNumber, fields.phoneNumber.errorMessage);
-      return false;
-    }
-    setSuccess(errors.phoneNumber);
-    return true;
-  }
-
-  function validateEmail() {
-    let email = inputs.email.value.trim();
-    if (!email.match(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/)) {
-      setError(errors.email, fields.email.errorMessage);
-      return false;
-    }
-    setSuccess(errors.email);
-    return true;
-  }
-
-  function validateMessage() {
-    let message = inputs.message.value.trim();
-    if (message.length < fields.message.minLength) {
-      setError(errors.message, fields.message.errorMessage);
-      return false;
-    }
-    setSuccess(errors.message);
-    return true;
-  }
-
-  inputs.fullName.addEventListener("keyup", validateFullName);
-  inputs.phoneNumber.addEventListener("keyup", validatePhone);
-  inputs.email.addEventListener("keyup", validateEmail);
-  inputs.message.addEventListener("keyup", validateMessage);
-
-  document.getElementById("submitForm").addEventListener("click", function (e) {
-    e.preventDefault();
-    if (
-      validateFullName() &&
-      validatePhone() &&
-      validateEmail() &&
-      validateMessage()
-    ) {
-      errors.submitError.style.color = "seagreen";
-      errors.submitError.innerHTML = "Submitting...";
-
-      fetch(
-        "https://script.google.com/macros/s/AKfycbzQ_mZ33cWaRrJJeGE5YjzDZuxDnzQ72y6BBy4-gco1McJsV0Y-iEXaRvPqlMp8ClFE/exec",
-        {
-          method: "POST",
-          body: JSON.stringify({
-            fullName: inputs.fullName.value,
-            phoneNumber: inputs.phoneNumber.value,
-            email: inputs.email.value,
-            message: inputs.message.value,
-          }),
-          headers: {
-            "Content-Type": "application/json",
-          },
-          mode: "no-cors",
-        }
-      )
-        .then((data) => {
-          errors.submitError.innerHTML = "Form submitted successfully!";
-
-          // Clear the form fields
-          Object.values(inputs).forEach((input) => {
-            input.value = "";
-          });
-
-          // Reset the success ticks
-          Object.values(errors).forEach((error) => {
-            error.innerHTML = ""; // Remove the success checkmarks and error messages
-          });
-
-          setTimeout(() => {
-            errors.submitError.innerHTML = "";
-          }, 2000);
-        })
-        .catch((error) => {
-          errors.submitError.innerHTML = "Error submitting form!";
-          console.error(error);
-        });
-    }
-  });
-}

@@ -103,14 +103,14 @@
       },
       {
         "name": "Dr. Akash Mandaloy",
-        "image": "./assets/a.png",
+        "image": "./assets/B.JPG",
         "qualifications": "BDS, MDS (Fellowship in Implantology)<br />CIIOMFI France",
         "bio": "Dr. Akash Mandalay is a renowned Implantologist and Periodontist in India. He graduated from Rural Dental College Loni and completed post-graduation in Periodontics at Modern Dental College, Indore. He also earned a Post Graduate Diploma in Implantology from Chanvaz Institute, France, and is a certified Implantologist from Sharad Pawar Dental College, Wardha. Passionate about education, he conducts courses in Periodontics, Implantology, and general practice. He has served as an Associate Professor at Sri Aurobindo College of Dentistry, Indore, and is a consultant at various dental clinics and hospitals across India. He runs a successful practice in Khopoli, Maharashtra."
       }
     ]
   },
   "fees": {
-    "imageSrc": "./assets/fees.png",
+    "imageSrc": "./assets/business-woman-working-finance-accounting-analyze-financi.jpg",
     "title": "Clear and Fair Pricing.",
     "buttonText": "View Rate Card",
     "buttonLink": "/Charges.html"
@@ -142,26 +142,29 @@
     }
   ],
   "formFields": {
-    "fullName": {
-      "label": "Full Name",
-      "placeholder": "John Doe",
-      "errorMessage": "Write Full Name"
+    "name": {
+      "label": "Name",
+      "type": "text",
+      "placeholder": "Enter your name",
+      "errorMessage": "Name must be at least 3 characters."
     },
-    "phoneNumber": {
-      "label": "Phone No",
-      "placeholder": "098 765 4321",
-      "errorMessage": "Phone No should be 10 digits"
+    "phone": {
+      "label": "Phone Number",
+      "type": "text",
+      "placeholder": "Enter your phone number",
+      "errorMessage": "Phone must be 10 digits."
     },
     "email": {
-      "label": "E-mail",
-      "placeholder": "example@example.com",
-      "errorMessage": "Invalid Email Address"
+      "label": "Email",
+      "type": "email",
+      "placeholder": "Enter your email",
+      "errorMessage": "Enter a valid email."
     },
     "message": {
       "label": "Message",
+      "type": "textarea",
       "placeholder": "Enter your message",
-      "minLength": 30,
-      "errorMessage": "30 characters required"
+      "errorMessage": "Message cannot be empty."
     }
   },
   "footerDesc": {
@@ -176,18 +179,21 @@
   },
   "contactInfo": [
     {
+      "color": "color: blue;",
       "icon": "fa-solid fa-phone",
       "type": "phone",
-      "link": "tel:+0987654321",
-      "text": "0987654321"
+      "link": "tel:+919823450664",
+      "text": "9823450664"
     },
     {
+      "color": "color: #D93025;",
       "icon": "fa-solid fa-envelope",
       "type": "email",
-      "link": "mailto:ars@example.com",
-      "text": "ars@example.com"
+      "link": "mailto:arsdental36@gmail.com",
+      "text": "arsdental36@gmail.com"
     },
     {
+      "color": "color: #34A853;",
       "icon": "fa-solid fa-clock",
       "type": "timing",
       "text": "Timing : 9 AM to 6:30 PM (Sunday Off)"
@@ -209,18 +215,32 @@
   ],
   "socialMedia": [
     {
-      "link": "https://facebook.com",
-      "icon": "fab fa-facebook"
+      "link": "https://www.facebook.com/share/1ALRrJ8wDM/",
+      "icon": "fab fa-facebook",
+      "color": "color: #1A73E8;"
     },
     {
-      "link": "https://instagram.com",
-      "icon": "fab fa-instagram"
+      "link": "https://www.instagram.com/drakash_dentist_implantologist?utm_source=qr&igsh=MzJpZnFuaWVxcmJz",
+      "icon": "fab fa-instagram",
+      "color": "color: #D93025;"
     },
     {
-      "link": "https://wa.me",
-      "icon": "fab fa-whatsapp"
+      "link": "https://wa.me/919823450664?text=Hello%20there!",
+      "icon": "fab fa-whatsapp",
+      "color": "color: #34A853;"
+    },
+    {
+      "link": "https://youtube.com/@drpashamotivation-jv2cd?si=tTPCrkRW1-cZop93&cxqr=PD-RAbEmLb85pssg4tlkQc",
+      "icon": "fa-brands fa-youtube",
+      "color": "color: #D93025;"
     }
   ],
+  "expertsSection": {
+    "title": "Professional Root Canal Training – ARS Dental Academy🦷!",
+    "link": "https://g.co/kgs/pkH5yDX",
+    "location": "Palmgrove Rd, Yellagondanpalya, Victoria Layout, Bengaluru, Karnataka 560047",
+    "color": "#4b0082"
+  },
   "copyright": "© Copyright 2024-25. All Rights Reserved | ARS Innovative Dental Solutions | Leading Dental Implants Clinic in Bangalore and Navi Mumbai.",
   "treatmentCharges": {
     "title": "Treatment Charges",

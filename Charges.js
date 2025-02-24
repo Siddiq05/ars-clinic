@@ -115,14 +115,14 @@ document.addEventListener("DOMContentLoaded", function () {
         if (item.type === "timing") {
           footerHTML += `
           <div>
-            <i class="${item.icon}"></i>
+            <i class="${item.icon}" style="${item.color}"></i>
             <p>${item.text}</p>
           </div>`;
         } else {
           footerHTML += `
           <div>
-            <a href="${item.link}">
-              <i class="${item.icon}"></i>
+            <a href="${item.link}" >
+              <i class="${item.icon}" style="${item.color}"></i>
               <p>${item.text}</p>
             </a>
           </div>`;
@@ -134,7 +134,7 @@ document.addEventListener("DOMContentLoaded", function () {
       data.socialMedia.forEach((social) => {
         footerHTML += `
         <a href="${social.link}">
-          <i class="${social.icon}"></i>
+          <i class="${social.icon}" style="${social.color}"></i>
         </a>`;
       });
       footerHTML += `</div>`;
@@ -145,7 +145,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       <div class="locations">
         <div class="locDesc">
-          <h2>Now Serving You at Multiple Locations!</h2>
+          <h1>Now Serving You at Multiple Locations!</h1>
         </div>
         <div class="locs">`;
 
@@ -161,10 +161,25 @@ document.addEventListener("DOMContentLoaded", function () {
       });
 
       footerHTML += `
-        </div>
       </div>
+    </div>`;
 
-      <p class="copyRight">${data.copyright}</p>`;
+      // **NEW Experts Section Above Copyright**
+      footerHTML += `
+    <div class="Experts">
+      <h1>${data.expertsSection.title}</h1>
+      <a href="${data.footerImage.link}" class="appointBtn2">
+            ${data.footerImage.buttonText}
+      </a>
+      <a href="${data.expertsSection.link}">
+        <i class="fa-solid fa-location-dot" style="color: ${data.expertsSection.color};"></i>
+        <p>${data.expertsSection.location}</p>
+      </a>
+      
+    </div>`;
+
+      // Copyright
+      footerHTML += `<p class="copyRight">${data.copyright}</p>`;
 
       footer.innerHTML = footerHTML;
     })
