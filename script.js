@@ -10,7 +10,7 @@ const sliderContent = [
   {
     title: "Innovative Dental™ Solutions Since 2009",
     subTitle: "WE ARE Innovative Dental",
-    para: "With two decades of excellence, we are proud to be not just the best but also the largest dental clinic in Bangalore!",
+    para: "With two decades of excellence, we are proud to be not just the best but also the largest dental clinic in Bangalore and Navi Mumbai!",
   },
   {
     title: "More than 20000+",
@@ -20,7 +20,7 @@ const sliderContent = [
   {
     title: "Among the Best in the Industry",
     subTitle: "An Award-Winning Dental Care Provider",
-    para: "A Leading Hospital in Bangalore with a 5-Star Customer Satisfaction Rating",
+    para: "A Leading Hospital in Bangalore and Navi Mumbai with a 5-Star Customer Satisfaction Rating",
   },
 ];
 

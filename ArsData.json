@@ -179,21 +179,21 @@
   },
   "contactInfo": [
     {
-      "color": "color: blue;",
+      "color": "color: #074e02;",
       "icon": "fa-solid fa-phone",
       "type": "phone",
       "link": "tel:+919823450664",
       "text": "9823450664"
     },
     {
-      "color": "color: #D93025;",
+      "color": "color: #461ca7;",
       "icon": "fa-solid fa-envelope",
       "type": "email",
       "link": "mailto:arsdental36@gmail.com",
       "text": "arsdental36@gmail.com"
     },
     {
-      "color": "color: #34A853;",
+      "color": "color: #2e03039c;",
       "icon": "fa-solid fa-clock",
       "type": "timing",
       "text": "Timing : 9 AM to 6:30 PM (Sunday Off)"

@@ -22,6 +22,7 @@ header {
 }
 .logo {
   width: 100%;
+  border-radius: 50%;
 }
 .navList {
   position: absolute;
@@ -808,8 +809,9 @@ footer {
 }
 .locs div a {
   text-decoration: none;
-
-  color: rgb(244, 31, 127); /* Default color */
+}
+.locs div p {
+  color: #023705;
 }
 
 .locs div:hover {
@@ -838,11 +840,17 @@ footer {
 .Experts h1 {
   padding-bottom: 30px;
 }
+.Experts p {
+  color: darkslategray;
+}
 .Experts i {
   color: #4b0082;
   font-size: 30px;
   padding: 15px;
   transition: transfrom 0.3s ease-in-out;
+}
+.locs i {
+  color: rgb(244, 31, 127);
 }
 .Experts a {
   text-decoration: none;
@@ -1136,7 +1144,7 @@ footer {
     transform: scale(1.1);
   }
   .navList li a:hover {
-    color: darkblue;
+    color: olivedrab;
   }
   .silderBtns2 {
     position: absolute;
