@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <title>ARS Innovative Dental Solutions</title>
+  </head>
+  <body>
+    <header>
+      <a href="/index.html" rel="noopener noreferrer" class="Logo"
+        ><img src="" alt="logo" class="logo" id="logo"
+      /></a>
+      <div class="menus">
+        <i class="fa-solid fa-bars" id="openMenu"></i>
+        <i class="fa-solid fa-x" id="closeMenu"></i>
+      </div>
+      <ul class="navList" id="navList"></ul>
+    </header>
+    <div class="ImgCon">
+      <img src="./assets/022.JPG" alt="" />
+    </div>
+    <div class="ourSpecialists">
+      <h1>Specialists Serving This Location</h1>
+      <img src="./assets/036.JPG" alt="" class="Bimg" />
+      <h2>Dr.Akash & Dr.Ashly</h2>
+    </div>
+    <div class="work">
+      <h1>High-Quality Service with High-End Equipment</h1>
+      <div class="Wslider">
+        <div class="Wslides" id="Wslides">
+          <img src="./assets/002.JPG" alt="Image 1" />
+          <img src="./assets/003.JPG" alt="Image 2" />
+          <img src="./assets/028.JPG" alt="Image 3" />
+          <img src="./assets/010.JPG" alt="Image 4" />
+        </div>
+        <div class="Wbuttons">
+          <button onclick="prevSlide()">❮</button>
+          <button onclick="nextSlide()">❯</button>
+        </div>
+        <div class="Wdots">
+          <span class="Wdot" onclick="currentSlide(0)"></span>
+          <span class="Wdot" onclick="currentSlide(1)"></span>
+          <span class="Wdot" onclick="currentSlide(2)"></span>
+          <span class="Wdot" onclick="currentSlide(3)"></span>
+        </div>
+      </div>
+    </div>
+    <div class="GoogleMaps">
+      <h1>Map the Way to a Better Smile</h1>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3777.244825845156!2d73.34212217335948!3d18.787239560977852!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be80738758d0ef3%3A0xa9e645421d9361c8!2sARS%20MULTISPECIALITY%20DENTAL%20CLINIC%20AND%20IMPLANT%20CENTRE!5e0!3m2!1sen!2sin!4v1744443682056!5m2!1sen!2sin"
+        style="border: 0"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        class="Gdirections"
+      ></iframe>
+    </div>
+    <footer id="footer"></footer>
+    <script src="./navBar.js"></script>
+  </body>
+</html>

@@ -211,7 +211,7 @@ document.addEventListener("DOMContentLoaded", function () {
       data.locations.forEach((location) => {
         footerHTML += `
         <div>
-          <a href="${location.link}" target="_blank">
+          <a href="${location.link}" >
             <i class="fa-solid fa-location-dot"></i>
             <p>${location.text}</p>
           </a>

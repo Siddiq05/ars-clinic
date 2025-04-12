@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <title>ARS Innovative Dental Solutions</title>
+  </head>
+  <body>
+    <header>
+      <a href="/index.html" rel="noopener noreferrer" class="Logo"
+        ><img src="" alt="logo" class="logo" id="logo"
+      /></a>
+      <div class="menus">
+        <i class="fa-solid fa-bars" id="openMenu"></i>
+        <i class="fa-solid fa-x" id="closeMenu"></i>
+      </div>
+      <ul class="navList" id="navList"></ul>
+    </header>
+    <div class="ImgCon">
+      <img src="./assets/WhatsApp Image 2025-04-12 at 5.22.57 PM.jpeg" alt="" />
+    </div>
+    <div class="ourSpecialists">
+      <h1>Specialists Serving This Location</h1>
+      <div class="ASpecialists">
+        <div>
+          <img src="./assets/smitha.jpeg" alt="" />
+          <h2>Dr.Smitha</h2>
+        </div>
+        <div>
+          <img src="./assets/Dr Nitin.jpeg" alt="" />
+          <h2>Dr.Nitin</h2>
+        </div>
+      </div>
+    </div>
+    <div class="work">
+      <h1>High-Quality Service with High-End Equipment</h1>
+      <div class="Wslider">
+        <div class="Wslides" id="Wslides">
+          <img
+            src="./assets/WhatsApp Image 2025-04-12 at 5.22.57 PM (1).jpeg"
+            alt="Image 1"
+          />
+          <img
+            src="./assets/WhatsApp Image 2025-04-12 at 5.22.57 PM (2).jpeg"
+            alt="Image 2"
+          />
+          <img
+            src="./assets/WhatsApp Image 2025-04-12 at 5.22.58 PM.jpeg"
+            alt="Image 3"
+          />
+          <img
+            src="./assets/WhatsApp Image 2025-04-12 at 5.22.57 PM.jpeg"
+            alt="Image 4"
+          />
+        </div>
+        <div class="Wbuttons">
+          <button onclick="prevSlide()">❮</button>
+          <button onclick="nextSlide()">❯</button>
+        </div>
+        <div class="Wdots">
+          <span class="Wdot" onclick="currentSlide(0)"></span>
+          <span class="Wdot" onclick="currentSlide(1)"></span>
+          <span class="Wdot" onclick="currentSlide(2)"></span>
+          <span class="Wdot" onclick="currentSlide(3)"></span>
+        </div>
+      </div>
+    </div>
+    <div class="GoogleMaps">
+      <h1>Map the Way to a Better Smile</h1>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.082634178733!2d77.63127317321079!3d13.030409613589967!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1762d2b83fa7%3A0x9dad42bb4cdde08e!2sARS%20Innovative%20dental%20solutions!5e0!3m2!1sen!2sin!4v1744459377270!5m2!1sen!2sin"
+        style="border: 0"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        class="Gdirections"
+      ></iframe>
+    </div>
+    <footer id="footer"></footer>
+    <script src="./navBar.js"></script>
+  </body>
+</html>

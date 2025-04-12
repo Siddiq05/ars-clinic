@@ -133,7 +133,7 @@ document.addEventListener("DOMContentLoaded", function () {
       data.locations.forEach((location) => {
         footerHTML += `
         <div>
-          <a href="${location.link}" target="_blank">
+          <a href="${location.link}">
             <i class="fa-solid fa-location-dot"></i>
             <p>${location.text}</p>
           </a>
@@ -177,3 +177,32 @@ function toggleAnswer(faqId) {
   // Toggle the icon rotation
   icon.classList.toggle("rotate");
 }
+let index = 0;
+const slides = document.getElementById("Wslides");
+const dots = document.querySelectorAll(".Wdot");
+const totalSlides = slides.children.length;
+
+function showSlide(i) {
+  index = (i + totalSlides) % totalSlides;
+  slides.style.transform = `translateX(-${index * 100}%)`;
+  dots.forEach((dot) => dot.classList.remove("active"));
+  dots[index].classList.add("active");
+}
+
+function nextSlide() {
+  showSlide(index + 1);
+}
+
+function prevSlide() {
+  showSlide(index - 1);
+}
+
+function currentSlide(i) {
+  showSlide(i);
+}
+
+// Auto slide every 5 seconds
+setInterval(nextSlide, 2500);
+
+// Show first slide initially
+showSlide(index);

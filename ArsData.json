@@ -174,8 +174,8 @@
   "footerImage": {
     "src": "./assets/smileFooter.png",
     "alt": "Smile Image",
-    "buttonText": "BOOK AN APPOINTMENT",
-    "link": "/Contact.html"
+    "buttonText": "View Details",
+    "link": "/Academy.html"
   },
   "contactInfo": [
     {
@@ -196,20 +196,20 @@
       "color": "color: #2e03039c;",
       "icon": "fa-solid fa-clock",
       "type": "timing",
-      "text": "Timing : 9 AM to 6:30 PM (Sunday Off)"
+      "text": "Timing : 9:00 AM to 6:30 PM (Sunday Off)"
     }
   ],
   "locations": [
     {
-      "link": "https://maps.app.goo.gl/5UcyLS5UjCadHrR9A",
+      "link": "/AustinTown.html",
       "text": "5th Block, Victoria Layout, Bengaluru, Karnataka 560001"
     },
     {
-      "link": "https://maps.app.goo.gl/gXTsKUo7roFw3Wwr9",
+      "link": "/Heenur.html",
       "text": "4th block, beside BRASSBERRY, 1296/A, Hennur Rd, 1st Stage, HBR Layout, Bengaluru, Karnataka 560043"
     },
     {
-      "link": "https://maps.app.goo.gl/VfcVXMZ5oDuuJtgh7",
+      "link": "/bombay.html",
       "text": "BHARAT ARCADE, Samaj Mandir Rd, opposite Shubham collection and Pratibha Complex, Bazarpeth, Laxminagar, Khopoli, Maharashtra 410203"
     }
   ],
